@@ -15,9 +15,9 @@
         + It should return a string with `name` and `age`. Example: "Mary, 50"
 */
 
-function Person(attr) {
-  this.name = attr.name;
-  this.age = attr.age;
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
   this.stomach = [];
 };
 
@@ -34,11 +34,11 @@ Person.prototype.poop = function () {
 };
 
 Person.prototype.toString = function () {
-  return `I'm ${this.name}, I have ${this.age} years`;
+  return `${this.name}, ${this.age}`;
 }
 
-const person1 = new Person({name: 'Mary', age: 50});
-console.log(person1.toString());
+const person1 = new Person('Mary', 50);
+console.log(person1);
 
 /*
   TASK 2
