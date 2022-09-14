@@ -32,7 +32,7 @@ function Person(attr) {
   };
 }
 
-const person1 = new Person({name: 'Mary', age: 50});
+const person1 = new Person({name: 'Neo', age: 20});
 console.log(person1);
 console.log(person1.toString());
 
