@@ -63,9 +63,12 @@ function Car(model, milesPerGallon) {
   this.odometer = 0;
 };
 Car.prototype.fill = function (gallons) {
-  return this.tank + gallons;
+  return (this.tank + gallons);
 };
 
+const car1 = new Car('truck', 20);
+console.log(car1);
+console.log(car1.fill(10));
 /*
   TASK 3
     - Write a Baby constructor subclassing Person.
