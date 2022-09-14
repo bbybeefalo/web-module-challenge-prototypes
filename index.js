@@ -34,15 +34,11 @@ Person.prototype.poop = function () {
 };
 
 Person.prototype.toString = function () {
-  return `${this.name}, ${this.age}`;
+  return `I'm ${this.name}, I have ${this.age} years`;
 }
 
 const person1 = new Person({name: 'Mary', age: 50});
-console.log(person1);
 console.log(person1.toString());
-
-console.log(person1.eat('Tacos'));
-console.log(person1.poop());
 
 /*
   TASK 2
