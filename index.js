@@ -18,23 +18,31 @@
 function Person(attr) {
   this.name = attr.name;
   this.age = attr.age;
-  const stomach = [];
-  this.eat = function (someFood) {
-    if (stomach.length < 10) {
-      stomach.push(someFood);
-    };
+  this.stomach = [];
+};
+
+Person.prototype.eat = function (someFood) {
+  if(this.stomach.length < 10) {
+    this.stomach.push(someFood);
+    return this.stomach;
   };
-  this.poop = function (){
-    stomach = [];
-  };
-  this.toString = function (){
-    return `${this.name}, ${this.age}`
-  };
+};
+
+Person.prototype.poop = function () {
+  this.stomach = [];
+  return this.stomach;
+};
+
+Person.prototype.toString = function () {
+  return `${this.name}, ${this.age}`;
 }
 
-const person1 = new Person({name: 'Neo', age: 20});
+const person1 = new Person({name: 'Mary', age: 50});
 console.log(person1);
 console.log(person1.toString());
+
+console.log(person1.eat('Tacos'));
+console.log(person1.poop());
 
 /*
   TASK 2
