@@ -78,10 +78,18 @@ console.log(car1.fill(10));
         + Should return a string "Playing with x", x being the favorite toy.
 */
 
-function Baby() {
-
+function Baby(name, age, favoriteToy) {
+  Person.call(this, name, age);
+  this.favoriteToy = favoriteToy;
 }
 
+Baby.prototype.play = function () {
+  return `Playing with ${this.favoriteToy}`;
+}
+
+const baby1 = new Baby('Lorelei', 4, 'Grandma phone');
+console.log(baby1);
+console.log(baby1.play());
 
 /* 
   TASK 4
