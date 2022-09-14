@@ -15,10 +15,26 @@
         + It should return a string with `name` and `age`. Example: "Mary, 50"
 */
 
-function Person() {
-
+function Person(attr) {
+  this.name = attr.name;
+  this.age = attr.age;
+  const stomach = [];
+  this.eat = function (someFood) {
+    if (stomach.length < 10) {
+      stomach.push(someFood);
+    };
+  };
+  this.poop = function (){
+    stomach = [];
+  };
+  this.toString = function (){
+    return `${this.name}, ${this.age}`
+  };
 }
 
+const person1 = new Person({name: 'Mary', age: 50});
+console.log(person1);
+console.log(person1.toString());
 
 /*
   TASK 2
